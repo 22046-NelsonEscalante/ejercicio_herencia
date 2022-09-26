@@ -8,6 +8,15 @@ public class Objetos {
     private String estado;
 
 
+    public Objetos(int id, String titulo, String materia, int cantidad, String estado){
+        setId(id);
+        setTitulo(titulo);
+        setMateria(materia);
+        setCantidad(cantidad);
+        setEstado(estado);
+    }
+
+
     public int getId() {
         return id;
     }

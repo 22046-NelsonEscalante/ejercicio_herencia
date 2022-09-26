@@ -5,6 +5,13 @@ public class Libro extends Objetos {
     private String autor;
 
 
+    public Libro(int id, String titulo, String materia, int cantidad, String estado, String editorial, String autor){
+        super(id, titulo, materia, cantidad, estado);
+        setEditorial(editorial);
+        setAutor(autor);
+    }
+
+    
     public String getEditorial() {
         return editorial;
     }
