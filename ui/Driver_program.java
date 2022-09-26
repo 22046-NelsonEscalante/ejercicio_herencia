@@ -17,48 +17,36 @@ public class Driver_program {
         in.close();
     }
 
-    public static void addObj(Scanner in){
+
+
+    /**
+     * 
+     * @param in Scanner for user input
+     */
+    public void addObjToInv(Scanner in){
         System.out.println("Ingrese el número del tipo de objeto que quiere ingresar.");
         System.out.println("1. Libro");
         System.out.println("2. Revista");
         System.out.println("3. Artículo");
         
         String option = in.nextLine();
-
+        
         switch (option){
             case "1":
-            Libro book;
-            System.out.println("Ingrese el id.");
-            int id = in.nextInt();
-            
-            System.out.println("Ingrese el titulo.");
-            String title = in.nextLine();
+                Libro libro = newObjeto.enterLibro(in);
+                inventario.add(libro);
+                break;
 
-            System.out.println("Ingrese la materia.");
-            String matter = in.nextLine();
+            case "2":
+                Revista revista = newObjeto.enterRevista(in);
+                inventario.add(revista);
+                break;
 
-            System.out.println("Ingrese la cantidad.");
-            int quantity = in.nextInt();
-
-            System.out.println("Ingrese el estado.");
-            String state = in.nextLine();
-
-            System.out.println("Ingrese el autor.");
-            String author = in.nextLine();
-
-            System.out.println("Ingrese la editorial.");
-            String editorial = in.nextLine();
-
-            book = new Libro();
-            book.setId(id);
-            book.setTitulo(title);
-            book.setMateria(matter);
-            book.setCantidad(quantity);
-            book.setEstado(state);
-            book.setAutor(author);
-            book.setEditorial(editorial);
-
-            break;
+            case "3":
+                Articulo articulo = newObjeto.enterArticulo(in);
+                inventario.add(articulo);
+                break;
         }
     }
+
 }
